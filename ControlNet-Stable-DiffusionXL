@@ -51,3 +51,85 @@ def get_depth_map(image):
     image = Image.fromarray((image * 255.0).clip(0, 255).astype(np.uint8))
     return image
 
+
+# using the same prompt to generate images from the pipeline, while giving the depth map of the images generated in the first part as input
+prompt1 = "a high resolution, coherent, 360-degree panoramic view of a gaming room with monitors displaying modern warfare games and a gamer sitting in front of one of the seats.The room is lit up by warm lights, coherent panorama with seam tiling"
+image = load_image("/content/drive/MyDrive/Avataar.ai/image4.png")
+controlnet_conditioning_scale = 0.5  # recommended for good generalization
+
+depth_image = get_depth_map(image)
+
+image4_depth1 = pipe(
+    prompt1, image=depth_image, num_inference_steps=30, controlnet_conditioning_scale=controlnet_conditioning_scale,
+    height = 512, 
+    width = 1024
+).images[0]
+image4_depth1.save("/content/drive/MyDrive/Avataar.ai/image4_depth1.png")
+
+prompt3 = "coherent 360-degree panorama image, The generated panorama’s ends should meet i.e. seam needs to be tiled. A small 4-walled salon with multiple mirrors, salon chairs, white walls, warm lighting, daylight."
+image3 = load_image("/content/drive/MyDrive/Avataar.ai/image13_n.png")
+controlnet_conditioning_scale = 0.5
+
+depth_image3 = get_depth_map(image3)
+
+image13_n_depth = pipe(
+    prompt3,
+    image = depth_image3,
+    num_inference_steps = 30,
+    controlnet_conditioning_scale= controlnet_conditioning_scale,
+    height = 512,
+    width = 1024
+).images[0]
+
+image13_n_depth.save("/content/drive/MyDrive/Avataar.ai/image13_n_depth.png")
+
+prompt5 = "coherent 360-degree panorama image, The generated panorama’s ends should meet i.e. seam needs to be tiled. An enclosed kids playroom with 4 walls, fun toys, green walls, cool lighting"
+image5 = load_image("/content/drive/MyDrive/Avataar.ai/image12_myn.png")
+controlnet_conditioning_scale = 0.5
+
+depth_image5 = get_depth_map(image5)
+
+image12_myn_depth = pipe(
+    prompt5,
+    image = depth_image5,
+    num_inference_steps = 30,
+    controlnet_conditioning_scale= controlnet_conditioning_scale,
+    height = 512,
+    width = 1024
+).images[0]
+
+image12_myn_depth.save("/content/drive/MyDrive/Avataar.ai/image12_myn_depth.png")
+
+prompt6 = "a high resolution, coherent 360 degree panorama image with seam tiling i.e. panorama's ends must meet, a court room resembling those in movies, typical lighting, old architechture"
+image6 = load_image("/content/drive/MyDrive/Avataar.ai/image10.png")
+controlnet_conditioning_scale = 0.5
+
+depth_image6 = get_depth_map(image6)
+
+image10_depth = pipe(
+    prompt6,
+    image = depth_image6,
+    num_inference_steps = 30,
+    controlnet_conditioning_scale= controlnet_conditioning_scale,
+    height = 512,
+    width = 1024
+).images[0]
+
+image10_depth.save("/content/drive/MyDrive/Avataar.ai/image10_depth.png")
+
+prompt7 = "ancient room for keeping deadly weapons, 360-degree panoramic image, detailed, 4k, old architechture, well preserved weapons, spectacular details"
+image7 = load_image("/content/drive/MyDrive/Avataar.ai/image14.png")
+controlnet_conditioning_scale = 0.5
+
+depth_image7 = get_depth_map(image7)
+
+image14_depth = pipe(
+    prompt7,
+    image = depth_image7,
+    num_inference_steps = 30,
+    controlnet_conditioning_scale= controlnet_conditioning_scale,
+    height = 512,
+    width = 1024
+).images[0]
+
+image14_depth.save("/content/drive/MyDrive/Avataar.ai/image14_depth.png")
