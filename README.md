@@ -6,7 +6,7 @@
 
      Some images that closely follow the conditions are demonstrated below with their corresponding prompts.
 
-Prompt 1: "a high resolution, coherent, 360-degree panoramic view of a gaming room with monitors displaying modern warfare games and a gamer sitting in front of one of the seats.The room is lit up by rgb lights, coherent panorama with seam tiling"
+Prompt 1: "a high resolution, coherent, 360-degree panoramic view of a gaming room with monitors displaying modern warfare games and a gamer sitting in front of one of the seats.The room is lit up by warm lights, coherent panorama with seam tiling"
 ![image4](https://github.com/beatsea20/StableDiffusion-XL-panorama/assets/108799982/ae188af9-1a6b-4f90-9e0c-219ba80c7bff)
 
 Prompt 2: "coherent 360-degree panorama image, The generated panorama’s ends should meet i.e. seam needs to be tiled. A small 4-walled salon with multiple mirrors, salon chairs, white walls, warm lighting, daylight."
